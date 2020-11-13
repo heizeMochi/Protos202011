@@ -77,6 +77,6 @@ public class ObjectPool : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("생성불가");
+        Debug.ScrollLog("생성불가");
     }
 }

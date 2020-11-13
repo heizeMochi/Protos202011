@@ -23,7 +23,7 @@ public class MotherShip : MobBehavior, IShipBehavior
                 Vector3 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (myData.embarkDistance < Vector3.Distance(transform.position, vec))
                 {
-                    Debug.Log(Vector3.Distance(transform.position, vec));
+                    Debug.ScrollLog("소환 가능한 최대거리를  초과하였습니다.");
                     return;
                 }
                 m_SpawnPos = false;
@@ -80,7 +80,7 @@ public class MotherShip : MobBehavior, IShipBehavior
     {
         if (embarker.Count == 0)
         {
-            Debug.LogWarning("하선 시킬 수 있는 유닛이 없습니다");
+            Debug.ScrollLog("하선 시킬 수 있는 유닛이 없습니다.");
             return;
         }
         ObjectPool.instance.DisEmbark(embarker, index, this.gameObject);
@@ -95,7 +95,8 @@ public class MotherShip : MobBehavior, IShipBehavior
             embarker.Add(mob);
             ObjectPool.instance.Destroy(mob);
         }
-        else Debug.LogWarning("승선인원 초과! 탑승 불가");//TODO UI에 탑승 못했다고 표시
+        else Debug.ScrollLog("승선인원 초과! 탑승 불가");
+            //TODO UI에 탑승 못했다고 표시
 
     }
     public void Embark(List<Transform> mobs)
@@ -107,7 +108,7 @@ public class MotherShip : MobBehavior, IShipBehavior
         if ((MAXIMUM_EMBARKER - embarker.Count - mobs.Count) > 0) //탑승못한 인원이 있으면...
         {
             repeat = MAXIMUM_EMBARKER - embarker.Count;
-            Debug.LogWarning("승선인원 초과! " + repeat + "명만 탑승합니다.");
+            Debug.ScrollLog("승선인원 초과! " + repeat + "명만 탑승합니다.");
 
             //TODO UI에 탑승 못했다고 표시
         }

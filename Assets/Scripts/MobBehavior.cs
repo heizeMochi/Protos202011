@@ -12,6 +12,7 @@ public class MobBehavior : MonoBehaviour
     public bool isExcuting = false;
     public bool isEmbark;
 
+
     private void Awake()
     {
         myData = GetComponent<MobData>();

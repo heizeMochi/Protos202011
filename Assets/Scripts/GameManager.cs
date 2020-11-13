@@ -54,10 +54,6 @@ public class GameManager : MonoBehaviour
             texture.SetActive(false);
             CommandUI.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ScrollLog.instance.Log("오류  입니다.");
-        }
     }
 
     /*/////////////////////////////////

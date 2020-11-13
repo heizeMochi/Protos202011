@@ -47,6 +47,5 @@ public class Swimmer : MobBehavior
 
     void AttackUpdate()
     {
-        Debug.Log("ATTACK");
     }
 }

@@ -62,7 +62,7 @@
     <Compile Include="Assets\Scripts\Model\DirectorModel.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IMobBehavior.cs" />
     <Compile Include="Assets\Scripts\MotherShip.cs" />
-    <Compile Include="Assets\Scripts\ScrollLog.cs" />
+    <Compile Include="Assets\Scripts\LogMng.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\ChildShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
