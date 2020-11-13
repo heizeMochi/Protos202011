@@ -82,7 +82,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 3.2, y: 2.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -108,7 +108,9 @@ MonoBehaviour:
   ATK: 0
   atk_coolDownTick: 0
   atk_actionTick: 0
+  embarkDistance: 0
   attackTarget: {fileID: 0}
+  enemyList: []
   isDead: 0
   mobtype: 0
   state: 0
@@ -129,7 +131,6 @@ MonoBehaviour:
   spawnChildShipUI: {fileID: 0}
   embarker: []
   m_SpawnPos: 0
-  EmbarkSelect: 0
 --- !u!58 &6678042980133802522
 CircleCollider2D:
   m_ObjectHideFlags: 0
