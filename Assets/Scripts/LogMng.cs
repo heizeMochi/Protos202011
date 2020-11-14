@@ -70,7 +70,8 @@ public class LogMng : MonoBehaviour
         float height = 0f;
         for (int i = 0; i < Content.childCount; i++)
         {
-            height += 68f;
+            height += 75f;
+            Debug.Log(i);
         }
         trans.sizeDelta = new Vector2(585f, height);
     }
