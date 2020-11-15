@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6678042980393841114}
   m_Layer: 8
   m_Name: MotherShip
-  m_TagString: BlueTeam
+  m_TagString: RedTeam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,14 +101,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  team: 1
+  team: 0
   defaultStat: {fileID: 11400000, guid: c52963f3a01e91a43bdef0157f7808e9, type: 2}
   HP: 0
   moveSpeed: 0
   ATK: 0
   atk_coolDownTick: 0
   atk_actionTick: 0
-  embarkDistance: 0
+  embarkDistance: 10.5
   attackTarget: {fileID: 0}
   enemyList: []
   isDead: 0
