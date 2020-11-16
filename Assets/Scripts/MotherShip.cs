@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MotherShip : MobBehavior, IShipBehavior
 {
+    bool Healing = false;
     public GameObject spawnChildShipUI;
     Button btn;
 
@@ -65,9 +66,14 @@ public class MotherShip : MobBehavior, IShipBehavior
                 }
                 c_embarker[i].Data.HP += c_embarker[i].Data.RepairHP;
                 GameManager.instance.Jewelry -= c_embarker[i].Data.RepairGold;
+                Healing = true;
             }
         }
-        isHealTime = 0;
+        if (Healing)
+        {
+            isHealTime = 0;
+            Healing = false;
+        }
     }
 
     void EmbarkClick()

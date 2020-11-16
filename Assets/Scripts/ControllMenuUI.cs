@@ -60,12 +60,16 @@ public class ControllMenuUI : MonoBehaviour
 
     public void DisEmbark(MotherShip ship)
     {
-        MotherShip mother = GameManager.pickedMob.GetComponent<MotherShip>();
+        if (ship.embarker.Count == 0)
+        {
+            GameManager.pickedMob = null;
+            return;
+        }
         Init();
-        for (int i = 0; i < mother.embarker.Count; i++)
+        for (int i = 0; i < ship.embarker.Count; i++)
         {
             images[i].gameObject.SetActive(true);
-            buttons[i].onClick.AddListener(() => mother.DisEmbark(i - 1));
+            buttons[i].onClick.AddListener(() => ship.DisEmbark(i - 1));
         }
         disEm = true;
     }
