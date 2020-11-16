@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// 몹의 스텟
 [CreateAssetMenu(fileName ="MobStats", menuName ="Create Mob Stats", order =0)]
 
 /// <summary>

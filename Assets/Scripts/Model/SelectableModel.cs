@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+//몹 (모선 , 자식선) 에 들어간 컴포넌트
+
 [RequireComponent(typeof(EventTrigger))]
 [RequireComponent(typeof(MobData))]
 public class SelectableModel : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
@@ -14,13 +16,17 @@ public class SelectableModel : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
 
     // 클릭 시 작동할 내용
+
     public void OnPointerClick(PointerEventData eventData)
     {
+        // MotherShip의 EmbarkSelect가 true(활성화) 되어있으면 선택된 몹을 GameManager.EmbarkMob에 할당
+        // 이후 EmbarkSelect 를 false(비활성화)
         if (MotherShip.EmbarkSelect)
         {
             GameManager.EmbarkMob = gameObject;
             MotherShip.EmbarkSelect = false;
         }
+        // GameManager.PickObj에 클릭된 gameObject를 할당
         else
         {
             isPickable = !isPickable;

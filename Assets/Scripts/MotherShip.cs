@@ -27,7 +27,13 @@ public class MotherShip : MobBehavior, IShipBehavior
 
         myData.SettingTeam(myData.team);
     }
-
+    // 소환 UI버튼을 누를때 작동할 함수
+    public void ChildShipSpawn()
+    {
+        m_SpawnPos = true;
+    }
+    // 소환 UI를 누르면 m_SpawnPos 가 활성화(true)가 되고 ( 소환 위치를 선택하기위한 준비상태 )
+    // 다시 한 번 눌렀을때 직접적인 소환을 하는 로직
     void SpawnClick()
     {
         if (Input.GetMouseButtonDown(0))
@@ -47,8 +53,12 @@ public class MotherShip : MobBehavior, IShipBehavior
         }
     }
 
+    // 수리가 필요한 유닛이 있는지 확인하여 필요한 유닛이 있다면 수리를 진행
     void Repair()
     {
+        if (c_embarker.Count == 0)
+            return;
+
         for (int i = 0; i < c_embarker.Count; i++)
         {
             if (c_embarker[i].isHeal && isHealTime >= c_embarker[i].Data.defaultStat.repairTime)
@@ -76,6 +86,13 @@ public class MotherShip : MobBehavior, IShipBehavior
         }
     }
 
+    // UI버튼 중 승선명령을 클릭하였을때 작동할 함수
+    public void IsEmbark()
+    {
+        isEmbark = true;
+    }
+
+    // isEmbark 가 true일때 작동할 함수 ( 승선명령을 받은 자식선이 해당 모선의 위치로 이동 )
     void EmbarkClick()
     {
         if (isEmbark)
@@ -96,16 +113,8 @@ public class MotherShip : MobBehavior, IShipBehavior
         }
     }
 
-    public void IsEmbark()
-    {
-        isEmbark = true;
-    }
 
-    public void ChildShipSpawn()
-    {
-        m_SpawnPos = true;
-    }
-
+    // Collider에 자신의 팀에 속해있는 ChildShip이 접촉했을때 승선시키는 함수
     public void OnCollisionEnter2D(Collision2D collision)
     { 
         if (collision.gameObject.GetComponent<ChildShip>() != null)

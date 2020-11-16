@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+// 실질적인 오브젝트의 생성을 담당할 클래스
+
 public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// UI 를 껏다켰다하기위해 만든 클래스
 public class ControllMenuUI : MonoBehaviour
 {
     ControllMenuUI instance;
@@ -30,6 +31,8 @@ public class ControllMenuUI : MonoBehaviour
         }
     }
 
+    // 현재 선택된 유닛의 layer를 검사해 어떤 타입의 유닛인지 검사후
+    // 해당 유닛의 SpawnPos 을 활성화하여 소환위치를 받을 준비를 함
     public void SpawnPos()
     {
         if (GameManager.pickedMob.layer == 8)
@@ -48,6 +51,7 @@ public class ControllMenuUI : MonoBehaviour
         }
     }
 
+    // 초기화
     void Init()
     {
         for (int i = 0; i < selectMenu; i++)
@@ -58,6 +62,7 @@ public class ControllMenuUI : MonoBehaviour
         }
     }
 
+    // 하선
     public void DisEmbark(MotherShip ship)
     {
         if (ship.embarker.Count == 0)
@@ -74,12 +79,14 @@ public class ControllMenuUI : MonoBehaviour
         disEm = true;
     }
 
+    // 취소
     public void CancleBtn()
     {
         GameManager.pickedMob = null;
         DirectorModel.move = false;
     }
     
+    // 수리
     public void Repair(MotherShip ship)
     {
         ship.c_embarker.Clear();
@@ -93,6 +100,8 @@ public class ControllMenuUI : MonoBehaviour
         }
     }
 
+    // GameManager.pickedMob ( 선택된 오브젝트 ) 가 있을때
+    // 해당 gameObject의 layer값을 받아서 UI버튼을 초기화
     void Update()
     {
         if (GameManager.pickedMob != null)

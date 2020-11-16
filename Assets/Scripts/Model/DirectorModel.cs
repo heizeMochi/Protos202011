@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// BackGround 에 들어간 컴포넌트
+
 public class DirectorModel : MonoBehaviour, IPointerClickHandler, IDragHandler, IBeginDragHandler
 {
     public Camera theCamera;
@@ -15,7 +17,7 @@ public class DirectorModel : MonoBehaviour, IPointerClickHandler, IDragHandler, 
 
     public static bool move = false;
 
-
+    // 클릭 시 해당 마우스 위치에 있는 gameObject를 GameManager.pickedMob 에 할당
     public void OnPointerClick(PointerEventData eventData)
     {
         if (move)
@@ -36,6 +38,8 @@ public class DirectorModel : MonoBehaviour, IPointerClickHandler, IDragHandler, 
         }
     }
 
+
+    // 드래그로 맵 이동
     public void OnBeginDrag(PointerEventData eventData)
     {
         cameraPos = theCamera.transform.position;

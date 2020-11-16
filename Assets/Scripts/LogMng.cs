@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// 해당 클래스는 게임 내 로그창이 있다고 가정하에 만든 클래스입니다.
 
+// Debug. 로 직접 ScrollLog로 접근하기위한 랩핑
 public static class Debug
 {
     public static void Log(object message)
     {
         UnityEngine.Debug.Log(message);
     }
-    public static void LogError(object message)
+    public static void LogError(string message)
     {
         UnityEngine.Debug.LogError(message);
     }
@@ -36,6 +38,7 @@ public class LogMng : MonoBehaviour
         instance = this;
     }
 
+    // String값을 매개변수로 받아서 Instantiate로 Resources에 있는 Text를 생성해 text에 들어갈 내용을 수정
     public void Log(string _text)
     {
         int size = 1;
@@ -65,6 +68,7 @@ public class LogMng : MonoBehaviour
         ContentInit();
     }
 
+    // ScrollLog의 생성갯수에 따라 Content의 크기를 변경
     void ContentInit()
     {
         float height = 0f;

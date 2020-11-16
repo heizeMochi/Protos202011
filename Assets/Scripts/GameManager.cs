@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// 게임의 시스템 정보를 담을 클래스
 public enum Team { RED, BLUE };
 public class GameManager : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // pickedMob ( 선택된 몹이 ) null이 아니라면
+        // 해당 몹을 확대해서 보여주는 UI를 켜주고
+        // null이라면 해당 UI를 끔
         if (pickedMob!=null && !MotherShip.EmbarkSelect)
         {
             _camera.enabled = false;
@@ -82,11 +86,7 @@ public class GameManager : MonoBehaviour
     /// 
     /////////////////////////////////*/
 
-    /// <summary>
-    /// 몹 정보를 저장하는 GameManager 의 list에 제시 받은 obj를 지정된 team에 저장합니다.
-    /// </summary>
-    /// <param name="team">저장할 Team</param>
-    /// <param name="obj">저장할 Object</param>
+    // 몹의 팀을 받아와서 해당 팀에 맞는 tag로 지정, 해당 팀의 List에 Transform 정보를 입력
     public static void AddMob(Team team, Transform obj)
     {
         switch (team)
@@ -102,6 +102,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Transform obj를 입력받아 해당 유닛의 MobData.team에 접근하여 Team정보를 받아서
+    // 레드팀인지 블루팀인지 확인 후
+    // 해당 팀의 리스트를 순회하여 리스트에서 Remove시켜줌
     public static void RemoveMob(Transform obj)
     {
         Team team = obj.GetComponent<MobData>().team;
