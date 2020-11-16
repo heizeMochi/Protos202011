@@ -9,6 +9,8 @@ public class MobBehavior : MonoBehaviour
 {
     protected MobData myData;
     protected IEnumerator coroutine;
+
+    public bool isHeal;
     public bool isExcuting = false;
     public bool isEmbark;
     public bool Enemy = false;

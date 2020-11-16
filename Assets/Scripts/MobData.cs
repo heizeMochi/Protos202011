@@ -16,6 +16,9 @@ public class MobData : MonoBehaviour
     public MobStats defaultStat;
 
     public int HP;
+    public int MaxHP;
+    public int RepairHP;
+    public int RepairGold;
     public float moveSpeed;
     public float ATK;
     public float atk_coolDownTick;
@@ -25,7 +28,7 @@ public class MobData : MonoBehaviour
 
     public List<Transform> enemyList;
 
-    public bool isDead=false;
+    public bool isDead = false;
     public MobType mobtype;
     public State state = State.IDLE;
 
@@ -65,10 +68,13 @@ public class MobData : MonoBehaviour
     public void InitStats()
     {
         if (defaultStat is null) Debug.LogError("DefaultStat info is null in MobData");
-        HP        = defaultStat.HP;
+        HP = defaultStat.HP;
         moveSpeed = defaultStat.moveSpeed;
-        ATK       = defaultStat.ATK;
+        ATK = defaultStat.ATK;
         atk_actionTick = defaultStat.atk_actionTick;
         atk_coolDownTick = defaultStat.atk_coolDownTick;
+        MaxHP = defaultStat.MaxHP;
+        RepairHP = defaultStat.RepairHP;
+        RepairGold = defaultStat.RepairGold;
     }
 }

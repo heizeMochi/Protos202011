@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject texture;
     public GameObject CommandUI;
 
+    public int Jewelry;
+
     public static GameObject EmbarkMob;
     public static List<List<Transform>> everyMobList;
     public static List<Transform> redTeam;

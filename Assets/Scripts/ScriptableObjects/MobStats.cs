@@ -10,9 +10,13 @@ using UnityEngine;
 public class MobStats : ScriptableObject
 {
     public int HP;
+    public int MaxHP;
+    public int RepairHP;
+    public int RepairGold;
     public float moveSpeed;
     public float ATK;
     public float atk_coolDownTick;
     public float atk_actionTick;
     public float attackRange;
+    public float repairTime;
 }

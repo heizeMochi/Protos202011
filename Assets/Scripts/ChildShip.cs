@@ -8,8 +8,14 @@ public class ChildShip : MobBehavior
 {
     public GameObject SpawnSwimmerUI;
     public GameObject MotherShip;
+
     Button btn;
     public bool c_SpawnPos = false;
+
+    private void OnEnable()
+    {
+        isHeal = false;
+    }
 
     void Update()
     {
@@ -30,13 +36,26 @@ public class ChildShip : MobBehavior
         }
         myData.SettingTeam(myData.team);
 
-        AttackTargetSetting();
+        //AttackTargetSetting();
     }
 
-
+    public void Repair()
+    {
+        if (myData.HP >= myData.MaxHP)
+            return;
+        isHeal = true;
+    }
 
     public void SwimmerSpawn()
     {
         c_SpawnPos = true;
+    }
+
+    public MobData Data
+    {
+        get
+        {
+            return myData;
+        }
     }
 }

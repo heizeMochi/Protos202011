@@ -10,12 +10,25 @@ public class MotherShip : MobBehavior, IShipBehavior
 
     public readonly int MAXIMUM_EMBARKER = 3;
     public List<Transform> embarker = new List<Transform>();
+    public List<ChildShip> c_embarker = new List<ChildShip>();
 
     public bool m_SpawnPos;
     public static bool EmbarkSelect = false;
 
+    public float isHealTime = 0;
+
     void Update()
-    { 
+    {
+        isHealTime += Time.deltaTime;
+        SpawnClick();
+        EmbarkClick();
+        Repair();
+
+        myData.SettingTeam(myData.team);
+    }
+
+    void SpawnClick()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             if (m_SpawnPos)
@@ -31,14 +44,41 @@ public class MotherShip : MobBehavior, IShipBehavior
                 GameManager.pickedMob = null;
             }
         }
+    }
 
+    void Repair()
+    {
+        for (int i = 0; i < c_embarker.Count; i++)
+        {
+            if (c_embarker[i].isHeal && isHealTime >= c_embarker[i].Data.defaultStat.repairTime)
+            {
+                if (c_embarker[i].Data.HP + c_embarker[i].Data.RepairHP > c_embarker[i].Data.MaxHP)
+                {
+                    //TODO 현재체력 + 회복체력이 최대체력보다 높은경우
+                    continue;
+                }
+
+                if (GameManager.instance.Jewelry > c_embarker[i].Data.RepairGold)
+                {
+                    //TODO 돈이 부족할 경우
+                    break;
+                }
+                c_embarker[i].Data.HP += c_embarker[i].Data.RepairHP;
+                GameManager.instance.Jewelry -= c_embarker[i].Data.RepairGold;
+            }
+        }
+        isHealTime = 0;
+    }
+
+    void EmbarkClick()
+    {
         if (isEmbark)
         {
             if (GameManager.EmbarkMob == null && !EmbarkSelect)
             {
                 EmbarkSelect = true;
             }
-            
+
             else if (!EmbarkSelect && GameManager.EmbarkMob != null)
             {
                 ChildShip ship = GameManager.EmbarkMob.GetComponent<ChildShip>();
@@ -48,7 +88,6 @@ public class MotherShip : MobBehavior, IShipBehavior
                 GameManager.EmbarkMob = null;
             }
         }
-        myData.SettingTeam(myData.team);
     }
 
     public void IsEmbark()

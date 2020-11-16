@@ -75,6 +75,19 @@ public class ControllMenuUI : MonoBehaviour
         GameManager.pickedMob = null;
         DirectorModel.move = false;
     }
+    
+    public void Repair(MotherShip ship)
+    {
+        ship.c_embarker.Clear();
+        ship.isHealTime = 0f;
+        for (int i = 0; i < ship.embarker.Count; i++)
+        {
+            ChildShip child = ship.embarker[i].GetComponent<ChildShip>();
+
+            child.Repair();
+            ship.c_embarker.Add(child);
+        }
+    }
 
     void Update()
     {
@@ -110,6 +123,11 @@ public class ControllMenuUI : MonoBehaviour
                 buttons[4].onClick.RemoveAllListeners();
                 buttons[4].onClick.AddListener(CancleBtn);
                 texts[4].text = "취소";
+
+                images[5].gameObject.SetActive(true);
+                buttons[5].onClick.RemoveAllListeners();
+                buttons[5].onClick.AddListener(() => Repair(ship));
+                texts[5].text = "수리";
 
             }
             else if (GameManager.pickedMob.layer == 9) // ChildShip
