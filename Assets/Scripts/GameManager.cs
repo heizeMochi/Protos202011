@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         if (pickedMob!=null && !MotherShip.EmbarkSelect)
         {
+            _camera.enabled = false;
             _camera.transform.position = new Vector3(pickedMob.transform.position.x , pickedMob.transform.position.y, -1);
             _camera.enabled = true;
             texture.SetActive(true);
