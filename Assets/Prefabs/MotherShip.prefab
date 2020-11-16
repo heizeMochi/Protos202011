@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 175384555726189546}
   - component: {fileID: 175384555726189549}
   - component: {fileID: 8835679055540218492}
-  - component: {fileID: 6678042980133802522}
   - component: {fileID: 6678042980133802523}
   - component: {fileID: 7093860445340850635}
   - component: {fileID: 6678042980393841114}
+  - component: {fileID: 2108227178891076651}
   m_Layer: 8
   m_Name: MotherShip
   m_TagString: RedTeam
@@ -128,25 +128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isExcuting: 0
   isEmbark: 0
+  Enemy: 0
   spawnChildShipUI: {fileID: 0}
   embarker: []
   m_SpawnPos: 0
---- !u!58 &6678042980133802522
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175384555726189548}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.003682971, y: -0.008784175}
-  serializedVersion: 2
-  m_Radius: 0.62657666
 --- !u!114 &6678042980133802523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,3 +230,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &2108227178891076651
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175384555726189548}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.69323826, y: -1.4359921}
+  m_Size: {x: 4.6597977, y: 1.7382963}
+  m_Direction: 1

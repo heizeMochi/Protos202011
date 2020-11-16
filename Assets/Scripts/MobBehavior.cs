@@ -11,7 +11,7 @@ public class MobBehavior : MonoBehaviour
     protected IEnumerator coroutine;
     public bool isExcuting = false;
     public bool isEmbark;
-
+    public bool Enemy = false;
 
     private void Awake()
     {

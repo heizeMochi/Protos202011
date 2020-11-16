@@ -84,7 +84,8 @@ public class ControllMenuUI : MonoBehaviour
             {
                 Init();
                 MotherShip ship = GameManager.pickedMob.GetComponent<MotherShip>();
-
+                if (ship.Enemy)
+                    return;
                 images[0].gameObject.SetActive(true);
                 buttons[0].onClick.RemoveAllListeners();
                 buttons[0].onClick.AddListener(SpawnPos);
@@ -114,7 +115,9 @@ public class ControllMenuUI : MonoBehaviour
             else if (GameManager.pickedMob.layer == 9) // ChildShip
             {
                 Init();
-
+                ChildShip ship = GameManager.pickedMob.GetComponent<ChildShip>();
+                if (ship.Enemy)
+                    return;
                 images[0].gameObject.SetActive(true);
                 buttons[0].onClick.RemoveAllListeners();
                 buttons[0].onClick.AddListener(SpawnPos);
