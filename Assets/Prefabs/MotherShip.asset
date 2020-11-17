@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: MotherShip
   m_EditorClassIdentifier: 
   HP: 1000
+  MaxHP: 1000
+  RepairHP: 0
+  RepairGold: 0
   moveSpeed: 1
   ATK: 0
   atk_coolDownTick: 0
   atk_actionTick: 0
+  attackRange: 0
+  repairTime: 0

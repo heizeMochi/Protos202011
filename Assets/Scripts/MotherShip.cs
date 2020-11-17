@@ -9,6 +9,8 @@ public class MotherShip : MobBehavior, IShipBehavior
     public GameObject spawnChildShipUI;
     Button btn;
 
+    HPSlider slider;
+
     public readonly int MAXIMUM_EMBARKER = 3;
     public List<Transform> embarker = new List<Transform>();
     public List<ChildShip> c_embarker = new List<ChildShip>();
@@ -17,6 +19,12 @@ public class MotherShip : MobBehavior, IShipBehavior
     public static bool EmbarkSelect = false;
 
     public float isHealTime = 0;
+
+    private void Start()
+    {
+        slider = Instantiate<HPSlider>(Resources.Load<HPSlider>("HPBar"));
+        slider.Init(myData, 1.5f);
+    }
 
     void Update()
     {

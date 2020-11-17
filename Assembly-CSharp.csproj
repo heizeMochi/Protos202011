@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ChildShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\ControllMenuUI.cs" />
+    <Compile Include="Assets\Scripts\HPSlider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
