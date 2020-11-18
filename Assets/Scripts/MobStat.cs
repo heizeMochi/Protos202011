@@ -4,17 +4,12 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName ="MobStats", menuName = "CreateStat", order =0)]
 
-public class MobStat : MonoBehaviour
+public class MobStat : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int HP;
+    public int MaxHP;
+    public int Damage;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float moveSpeed;
+    public float attackSpeed;
 }

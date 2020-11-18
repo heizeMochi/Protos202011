@@ -11,7 +11,6 @@ public class MotherShip : MonoBehaviour
     void Update()
     {
         MotherShipInput();
-        transform.position = new Vector3(this.transform.position.x, Ypos[line].transform.position.y, 0);
     }
 
     void MotherShipInput()
@@ -28,6 +27,7 @@ public class MotherShip : MonoBehaviour
             {
                 line--;
             }
+            transform.position = new Vector3(this.transform.position.x, Ypos[line].transform.position.y, 0);
         }
     }
 }
