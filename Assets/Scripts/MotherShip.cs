@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MotherShip : MonoBehaviour
+public class MotherShip : Mob
 {
     public int line = 0;
     public List<GameObject> Ypos;
-    public bool enemy;
 
     void Update()
     {
+        if (stat.enemy)
+            return;
+
         MotherShipInput();
     }
 
     void MotherShipInput()
     {
-        if (!enemy)
+        if (!stat.enemy)
         {
             bool Upkey = Input.GetKeyDown(KeyCode.UpArrow);
             bool Downkey = Input.GetKeyDown(KeyCode.DownArrow);
@@ -26,6 +28,13 @@ public class MotherShip : MonoBehaviour
             else if (Downkey && line > 0)
             {
                 line--;
+            }
+
+            bool Spawn_One = Input.GetKeyDown(KeyCode.Alpha1);
+
+            if (Spawn_One)
+            {
+                ObjectPool.InstantiateMob<ChildShip>(this,stat.enemy);
             }
             transform.position = new Vector3(this.transform.position.x, Ypos[line].transform.position.y, 0);
         }

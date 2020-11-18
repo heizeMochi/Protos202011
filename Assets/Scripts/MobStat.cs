@@ -10,6 +10,11 @@ public class MobStat : ScriptableObject
     public int MaxHP;
     public int Damage;
 
+    public bool enemy;
+
+    public int Jewelry;
+
     public float moveSpeed;
     public float attackSpeed;
+    public float attackCool;
 }
