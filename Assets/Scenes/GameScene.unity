@@ -869,17 +869,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobs: []
-  Prefabs:
-  - {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  - {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  - {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  - {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  - {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  - {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
-  - {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
-  - {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
-  - {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
-  - {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
+  childShipCount: 10
+  childShip: {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
+  enemyChildShipCount: 10
+  enemyChildShip: {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
 --- !u!1 &696966931
 GameObject:
   m_ObjectHideFlags: 0

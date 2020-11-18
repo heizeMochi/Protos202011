@@ -6,7 +6,11 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
     public List<GameObject> mobs;
-    public List<GameObject> Prefabs;
+
+    public int childShipCount;
+    public GameObject childShip;
+    public int enemyChildShipCount;
+    public GameObject enemyChildShip;
 
     private void Awake()
     {
@@ -15,9 +19,15 @@ public class ObjectPool : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < Prefabs.Count; i++)
+        PrefabInit(childShip, childShipCount);
+        PrefabInit(enemyChildShip, enemyChildShipCount);
+    }
+
+    void PrefabInit(GameObject go, int count)
+    {
+        for (int i = 0; i < count; i++)
         {
-            mobs.Add(Instantiate(Prefabs[i], transform));
+            mobs.Add(Instantiate(go));
         }
     }
 

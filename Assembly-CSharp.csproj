@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\ChildShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Borderline.cs" />
+    <Compile Include="Assets\Scripts\SceneChange.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
