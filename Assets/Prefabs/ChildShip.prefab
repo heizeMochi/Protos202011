@@ -10,11 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5249578022345364240}
   - component: {fileID: 5249578022345364241}
-  - component: {fileID: 5249578022345364246}
-  - component: {fileID: 5249578022345364248}
   - component: {fileID: 1592027425944597217}
   - component: {fileID: 1592027425944597216}
-  - component: {fileID: 2938418756374608176}
   m_Layer: 9
   m_Name: ChildShip
   m_TagString: Untagged
@@ -87,48 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5249578022345364246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5249578022345364247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03fd3d145cdd5a44792089112b974abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  team: 0
-  defaultStat: {fileID: 11400000, guid: 0e27390d01e160e42a48c3a79a724c99, type: 2}
-  HP: 0
-  moveSpeed: 0
-  ATK: 0
-  atk_coolDownTick: 0
-  atk_actionTick: 0
-  attackTarget: {fileID: 0}
-  enemyList: []
-  isDead: 0
-  mobtype: 0
-  state: 0
---- !u!114 &5249578022345364248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5249578022345364247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de6c898f5d1c4ee4d82a5d989f93206d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isExcuting: 0
-  isEmbark: 0
-  SpawnSwimmerUI: {fileID: 0}
-  MotherShip: {fileID: 0}
-  c_SpawnPos: 0
 --- !u!58 &1592027425944597217
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -206,19 +161,3 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &2938418756374608176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5249578022345364247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ff4f037b99b744b98c3e435af0f71e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSelectable: 1
-  isPickable: 1
-  isSelected: 0
-  isPicked: 0

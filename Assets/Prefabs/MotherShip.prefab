@@ -10,10 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175384555726189547}
   - component: {fileID: 175384555726189546}
-  - component: {fileID: 175384555726189549}
-  - component: {fileID: 8835679055540218492}
   - component: {fileID: 6678042980133802523}
-  - component: {fileID: 7093860445340850635}
   - component: {fileID: 6678042980393841114}
   - component: {fileID: 2108227178891076651}
   m_Layer: 8
@@ -88,50 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &175384555726189549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175384555726189548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03fd3d145cdd5a44792089112b974abf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  team: 0
-  defaultStat: {fileID: 11400000, guid: c52963f3a01e91a43bdef0157f7808e9, type: 2}
-  HP: 0
-  moveSpeed: 0
-  ATK: 0
-  atk_coolDownTick: 0
-  atk_actionTick: 0
-  embarkDistance: 10.5
-  attackTarget: {fileID: 0}
-  enemyList: []
-  isDead: 0
-  mobtype: 0
-  state: 0
---- !u!114 &8835679055540218492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175384555726189548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5936b7e3227ee746a3458049a068fbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isExcuting: 0
-  isEmbark: 0
-  Enemy: 0
-  spawnChildShipUI: {fileID: 0}
-  embarker: []
-  m_SpawnPos: 0
 --- !u!114 &6678042980133802523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,22 +146,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &7093860445340850635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175384555726189548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ff4f037b99b744b98c3e435af0f71e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSelectable: 1
-  isPickable: 1
-  isSelected: 0
-  isPicked: 0
 --- !u!50 &6678042980393841114
 Rigidbody2D:
   serializedVersion: 4

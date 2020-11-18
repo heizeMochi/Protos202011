@@ -53,21 +53,8 @@
     <UnityVersion>2020.1.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Swimmer.cs" />
-    <Compile Include="Assets\Scripts\Model\SelectableModel.cs" />
-    <Compile Include="Assets\Scripts\MobData.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObjects\MobStats.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IShipBehavior.cs" />
-    <Compile Include="Assets\Scripts\MobBehavior.cs" />
-    <Compile Include="Assets\Scripts\Model\DirectorModel.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IMobBehavior.cs" />
-    <Compile Include="Assets\Scripts\MotherShip.cs" />
-    <Compile Include="Assets\Scripts\LogMng.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool.cs" />
-    <Compile Include="Assets\Scripts\ChildShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\ControllMenuUI.cs" />
-    <Compile Include="Assets\Scripts\HPSlider.cs" />
+    <Compile Include="Assets\Scripts\MobStat.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
