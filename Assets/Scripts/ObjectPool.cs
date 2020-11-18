@@ -29,9 +29,14 @@ public class ObjectPool : MonoBehaviour
 
             if(SpawnMob.stat.enemy == mother.stat.enemy)
             {
+                if (GameManager.jewelry < SpawnMob.stat.Jewelry)
+                    return;
                 instance.mobs.RemoveAt(i);
+                SpawnMob.Init();
+                GameManager.jewelry -= SpawnMob.Jewelry;
                 SpawnMob.gameObject.SetActive(true);
                 SpawnMob.transform.position = mother.transform.position;
+                SpawnMob.isAlive = true;
                 return;
             }
         }

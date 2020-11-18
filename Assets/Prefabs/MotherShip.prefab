@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 175384555726189547}
   - component: {fileID: 175384555726189546}
   - component: {fileID: 6678042980133802523}
-  - component: {fileID: 6678042980393841114}
   - component: {fileID: 2108227178891076651}
+  - component: {fileID: 706316114}
   m_Layer: 8
   m_Name: MotherShip
   m_TagString: RedTeam
@@ -146,27 +146,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!50 &6678042980393841114
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 175384555726189548}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!70 &2108227178891076651
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,9 +156,34 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.69323826, y: -1.4359921}
   m_Size: {x: 4.6597977, y: 1.7382963}
   m_Direction: 1
+--- !u!114 &706316114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175384555726189548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5936b7e3227ee746a3458049a068fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  isAlive: 0
+  stat: {fileID: 11400000, guid: c52963f3a01e91a43bdef0157f7808e9, type: 2}
+  AttackTarget: {fileID: 0}
+  HP: 0
+  MaxHP: 0
+  Damage: 0
+  Jewelry: 0
+  line: 0
+  Ypos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

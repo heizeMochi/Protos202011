@@ -9,9 +9,23 @@ public class MotherShip : Mob
 
     void Update()
     {
-        if (stat.enemy)
+        if (!isAlive)
             return;
-
+        if (DieCheck())
+        {
+            if (gameObject.CompareTag("RedTeam"))
+            {
+                GameManager.Defeat();
+            }else if (gameObject.CompareTag("BlueTeam"))
+            {
+                GameManager.Victory();
+            }
+            Mob[] mob = GameObject.FindObjectsOfType<Mob>(true);
+            for (int i = 0; i < mob.Length; i++)
+            {
+                mob[i].isAlive = false;
+            }
+        }
         MotherShipInput();
     }
 

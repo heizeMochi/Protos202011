@@ -17,6 +17,8 @@ public class MotherShipAI : MonoBehaviour
 
     void Update()
     {
+        if (mother.isAlive == false)
+            return;
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= spawnTime)
         {

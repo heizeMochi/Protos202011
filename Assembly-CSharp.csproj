@@ -53,15 +53,17 @@
     <UnityVersion>2020.1.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AttackCollider.cs" />
+    <Compile Include="Assets\Scripts\HPSlider.cs" />
+    <Compile Include="Assets\Scripts\MobStat.cs" />
+    <Compile Include="Assets\Scripts\Mob.cs" />
+    <Compile Include="Assets\Scripts\Define.cs" />
+    <Compile Include="Assets\Scripts\MotherShipAI.cs" />
     <Compile Include="Assets\Scripts\MotherShip.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\ChildShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MobStat.cs" />
-    <Compile Include="Assets\Scripts\Define.cs" />
-    <Compile Include="Assets\Scripts\Mob.cs" />
-    <Compile Include="Assets\Scripts\AttackCollider.cs" />
-    <Compile Include="Assets\Scripts\MotherShipAI.cs" />
+    <Compile Include="Assets\Scripts\Borderline.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

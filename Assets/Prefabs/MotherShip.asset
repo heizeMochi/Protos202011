@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edb4ba656bd96641b1eb19c82568d9e, type: 3}
   m_Name: MotherShip
   m_EditorClassIdentifier: 
-  HP: 0
-  MaxHP: 0
+  HP: 10
+  MaxHP: 10
   Damage: 0
-  Jewelry: 0
+  enemy: 0
+  Jewelry: 9999
   moveSpeed: 0
   attackSpeed: 0
+  attackCool: 0

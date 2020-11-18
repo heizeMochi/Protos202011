@@ -5,23 +5,30 @@ using UnityEngine;
 public class ChildShip : Mob
 {
     bool canAttack = false;
+    public Collider2D attackCollider;
 
     private void Update()
     {
         AttackCoolDown();
-        switch (state)
+        DieCheck();
+
+        if (isAlive)
         {
-            case Define.State.MOVING:
-                OnMoving();
-                break;
-            case Define.State.ATTACK:
-                OnAttack();
-                break;
+            switch (state)
+            {
+                case Define.State.MOVING:
+                    OnMoving();
+                    break;
+                case Define.State.ATTACK:
+                    OnAttack();
+                    break;
+            }
         }
     }
 
     void OnMoving()
     {
+        attackCollider.enabled = true;
         if (!stat.enemy)
         {
             transform.position
@@ -43,10 +50,10 @@ public class ChildShip : Mob
     {
         if (!canAttack)
         {
-            stat.attackCool += Time.deltaTime;
-            if (stat.attackCool >= stat.attackSpeed)
+            attackCool += Time.deltaTime;
+            if (attackCool >= attackSpeed)
             {
-                stat.attackCool = 0;
+                attackCool = 0;
                 canAttack = true;
             }
         }
@@ -54,6 +61,17 @@ public class ChildShip : Mob
 
     void OnAttack()
     {
+        if (AttackTarget == null)
+        {
+            state = Define.State.MOVING;
+            return;
+        }
+        attackCollider.enabled = false;
+        if(AttackTarget.gameObject.activeSelf == false)
+        {
+            AttackTarget = null;
+            state = Define.State.MOVING;
+        }
         if (canAttack)
         {
             Attack(AttackTarget);
@@ -63,6 +81,6 @@ public class ChildShip : Mob
 
     void Attack(Mob enemyStat)
     {
-        enemyStat.stat.HP -= stat.Damage;
+        enemyStat.HP -= Damage;
     }
 }
