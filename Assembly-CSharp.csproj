@@ -53,6 +53,7 @@
     <UnityVersion>2020.1.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MotherShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MobStat.cs" />
   </ItemGroup>
