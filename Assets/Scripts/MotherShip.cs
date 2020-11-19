@@ -50,7 +50,7 @@ public class MotherShip : Mob
             {
                 ObjectPool.InstantiateMob<ChildShip>(this,stat.enemy);
             }
-            transform.position = new Vector3(this.transform.position.x, Ypos[line].transform.position.y, 0);
         }
+        transform.position = new Vector3(this.transform.position.x, Ypos[line].transform.position.y, 0);
     }
 }

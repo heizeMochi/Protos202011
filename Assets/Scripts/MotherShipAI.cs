@@ -23,6 +23,8 @@ public class MotherShipAI : MonoBehaviour
         if (elapsedTime >= spawnTime)
         {
             elapsedTime = 0;
+            int rand = Random.Range(0, 3);
+            mother.line = rand;
             ObjectPool.InstantiateMob<ChildShip>(mother, enemy);
         }
     }
