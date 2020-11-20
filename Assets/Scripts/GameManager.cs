@@ -22,7 +22,10 @@ public class GameManager : MonoBehaviour
     [Tooltip("보석의 최대보유가능갯수")]
     public int maxJewlry;
 
+    [Tooltip("몇 초당 보석 획득할것인가")]
     public float jewelryTime = 1;
+    [Tooltip("보석을 몇개씩 획득할것인가.")]
+    public int getJewelry = 1;
     float elapsedTime = 0;
 
     private void Awake()
@@ -43,11 +46,16 @@ public class GameManager : MonoBehaviour
 
         elapsedTime += Time.deltaTime;
 
-        if(elapsedTime >= jewelryTime && jewelry < maxJewlry)
+        if(elapsedTime >= jewelryTime && jewelry + getJewelry < maxJewlry)
         {
             elapsedTime = 0;
 
-            jewelry++;
+            jewelry += getJewelry;
+        }else if(elapsedTime >= jewelryTime && jewelry + getJewelry >= maxJewlry)
+        {
+            elapsedTime = 0;
+
+            jewelry = maxJewlry;
         }
 
         jewelryText.text = $"{jewelry} / {maxJewlry}";

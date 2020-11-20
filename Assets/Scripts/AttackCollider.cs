@@ -16,6 +16,8 @@ public class AttackCollider : MonoBehaviour
     {
         if (collision.GetComponent<Mob>() != null)
         {
+            if (collision.gameObject.layer == 8)
+                return;
             if (collision.GetComponent<Mob>().stat.enemy != enemy)
             {
                 root.AttackTarget = collision.GetComponent<Mob>();

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edb4ba656bd96641b1eb19c82568d9e, type: 3}
   m_Name: Childship_Enemy
   m_EditorClassIdentifier: 
-  HP: 10
-  MaxHP: 10
+  HP: 5
+  MaxHP: 5
   Damage: 1
   enemy: 1
   Jewelry: 0
