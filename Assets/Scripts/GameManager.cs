@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
 
     public bool playing = true;
 
+    [Tooltip("제한시간설정 : 해당 시간이 0이되면 게임패배")]
     public float time = 120;
 
     public static int jewelry;
+    [Tooltip("보석의 최대보유가능갯수")]
     public int maxJewlry;
 
     public float jewelryTime = 1;
