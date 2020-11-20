@@ -9,6 +9,8 @@ public class ChildShip : Mob
 
     private void Update()
     {
+        if (!GameManager.instance.playing)
+            return;
         AttackCoolDown();
         DieCheck();
 
