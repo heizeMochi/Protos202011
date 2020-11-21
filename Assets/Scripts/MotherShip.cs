@@ -48,8 +48,35 @@ public class MotherShip : Mob
 
             if (Spawn_One)
             {
-                ObjectPool.InstantiateMob<ChildShip>(this,stat.enemy);
+                ObjectPool.InstantiateMob<UnitOne>(this,stat.enemy);
             }
+
+            bool Spawn_Two = Input.GetKeyDown(KeyCode.Alpha2);
+
+            if (Spawn_Two)
+            {
+                ObjectPool.InstantiateMob<UnitTwo>(this, stat.enemy);
+            }
+
+            bool SpawnThree = Input.GetKeyDown(KeyCode.Alpha3);
+
+            if (SpawnThree)
+            {
+                ObjectPool.InstantiateMob<UnitThree>(this, stat.enemy);
+            }
+            bool SpawnFour = Input.GetKeyDown(KeyCode.Alpha4);
+
+            if (SpawnFour)
+            {
+                ObjectPool.InstantiateMob<UnitFour>(this, stat.enemy);
+            }
+            bool SpawnFive = Input.GetKeyDown(KeyCode.Alpha5);
+
+            if (SpawnFive)
+            {
+                ObjectPool.InstantiateMob<UnitFive>(this, stat.enemy);
+            }
+
         }
         transform.position = new Vector3(this.transform.position.x, Ypos[line].transform.position.y, 0);
     }

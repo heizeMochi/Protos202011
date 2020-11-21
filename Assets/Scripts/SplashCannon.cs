@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SplashCannon : MonoBehaviour
 {
+    Animator anim;
     public int attackDamage;
     CircleCollider2D Col;
     public GameObject attackTarget;
@@ -13,7 +14,7 @@ public class SplashCannon : MonoBehaviour
     {
         if (collision.gameObject == attackTarget)
         {
-            Debug.Log("SPLASH");
+            anim = GetComponent<Animator>();
             Col = GetComponent<CircleCollider2D>();
             Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 0.5f);
             List<GameObject> target = new List<GameObject>();
@@ -31,8 +32,9 @@ public class SplashCannon : MonoBehaviour
                 Mob mob = target[i].GetComponent<Mob>();
                 mob.anim.SetTrigger("Hit");
                 mob.HP -= attackDamage;
+                anim.SetTrigger("Explosion");
             }
-            Destroy(gameObject);
+            Destroy(gameObject, 0.2f);
         }
     }
 

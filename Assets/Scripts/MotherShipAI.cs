@@ -25,7 +25,28 @@ public class MotherShipAI : MonoBehaviour
             elapsedTime = 0;
             int rand = Random.Range(0, 3);
             mother.line = rand;
-            ObjectPool.InstantiateMob<ChildShip>(mother, enemy);
+
+            int unitrand = Random.Range(0, 5);
+
+
+            switch (unitrand)
+            {
+                case 0:
+                    ObjectPool.InstantiateMob<UnitOne>(mother, enemy);
+                    break;
+                case 1:
+                    ObjectPool.InstantiateMob<UnitTwo>(mother, enemy);
+                    break;
+                case 2:
+                    ObjectPool.InstantiateMob<UnitThree>(mother, enemy);
+                    break;
+                case 3:
+                    ObjectPool.InstantiateMob<UnitFour>(mother, enemy);
+                    break;
+                case 4:
+                    ObjectPool.InstantiateMob<UnitFive>(mother, enemy);
+                    break;
+            }
         }
     }
 }

@@ -1749,10 +1749,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobs: []
-  childShipCount: 10
-  childShip: {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  enemyChildShipCount: 10
-  enemyChildShip: {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
+  unit_one_Count: 20
+  unit_one: {fileID: 5249578022345364247, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
+  unit_one_enemy: {fileID: 5249578022345364247, guid: 0e05db121d207e64e9b34241bb261f7b, type: 3}
+  unit_two_Count: 10
+  unit_two: {fileID: 5249578022345364247, guid: a7296f2a2ca31094c9b7903eed2f62fa, type: 3}
+  unit_two_enemy: {fileID: 5249578022345364247, guid: 6017cda4c91da7145b8a22312766fa76, type: 3}
+  unit_three_Count: 5
+  unit_three: {fileID: 5249578022345364247, guid: f298f27f13fb7644bb308cde3dc0a6c5, type: 3}
+  unit_three_enemy: {fileID: 5249578022345364247, guid: 2a9739eba4c3620478cec40096293928, type: 3}
+  unit_four_Count: 5
+  unit_four: {fileID: 5249578022345364247, guid: 289cb5a1a8b2a0c4ebb1b606d8b7ee55, type: 3}
+  unit_four_enemy: {fileID: 5249578022345364247, guid: 7cc216f52f6f57347abe67c07e99f80e, type: 3}
+  unit_five_Count: 5
+  unit_five: {fileID: 5249578022345364247, guid: ba5a981d1efa53b48bd78d9bacefaa4a, type: 3}
+  unit_five_enemy: {fileID: 5249578022345364247, guid: 2c42cae5149c5f14e9bf7e61368b58d5, type: 3}
 --- !u!1 &662835297
 GameObject:
   m_ObjectHideFlags: 0

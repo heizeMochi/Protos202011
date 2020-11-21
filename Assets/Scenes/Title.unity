@@ -664,7 +664,7 @@ MonoBehaviour:
   backGround: {fileID: 6029664078747412662}
   sound: {fileID: 6029664078747412681}
   effectSound: 1
-  backGroundSound: 1
+  backGroundSound: 0
 --- !u!1 &6029664078747412680
 GameObject:
   m_ObjectHideFlags: 0

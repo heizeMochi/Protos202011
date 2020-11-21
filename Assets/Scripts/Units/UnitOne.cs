@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChildShip : Mob
+public class UnitOne : Mob
 {
     bool canAttack = false;
     public Collider2D attackCollider;
@@ -83,8 +83,9 @@ public class ChildShip : Mob
 
     void Attack(Mob mob)
     {
-        SplashCannon cannon = Instantiate<SplashCannon>(Resources.Load<SplashCannon>("Prefabs/SplashCannon"));
-        Debug.Log(Resources.Load<SplashCannon>("Prefabs/SplashCannon"));
+        SplashCannon cannon = Instantiate<SplashCannon>(Resources.Load<SplashCannon>("Prefabs/SplashCannon"), transform);
+        cannon.transform.localPosition = Vector3.zero;
+        cannon.transform.parent = null;
         cannon.attackDamage = Damage;
         cannon.attackTarget = mob.gameObject;
         AudioManager.instance.SoundPlay("explodemini");
