@@ -59,12 +59,13 @@
     <Compile Include="Assets\Scripts\Mob.cs" />
     <Compile Include="Assets\Scripts\Define.cs" />
     <Compile Include="Assets\Scripts\MotherShipAI.cs" />
+    <Compile Include="Assets\Scripts\Borderline.cs" />
+    <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\MotherShip.cs" />
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\ChildShip.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Borderline.cs" />
-    <Compile Include="Assets\Scripts\SceneChange.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

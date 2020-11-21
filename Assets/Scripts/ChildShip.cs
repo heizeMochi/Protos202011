@@ -85,5 +85,6 @@ public class ChildShip : Mob
     {
         enemyStat.HP -= Damage;
         enemyStat.anim.SetTrigger("Hit");
+        AudioManager.instance.SoundPlay("exam1");
     }
 }
