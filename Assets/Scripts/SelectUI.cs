@@ -9,6 +9,7 @@ public class SelectUI : MonoBehaviour
     public Image[] MobIconObj;
     public Sprite[] sprites;
     public Text[] JewelryText;
+    public GameObject[] gos;
 
     private void Start()
     {
@@ -28,11 +29,11 @@ public class SelectUI : MonoBehaviour
         {
             if (mobs[i].stat.Jewelry > GameManager.jewelry)
             {
-                MobIconObj[i].color = Color.black;
+                gos[i].SetActive(true);
             }
             else
             {
-                MobIconObj[i].color = Color.white;
+                gos[i].SetActive(false);
             }
         }
     }
