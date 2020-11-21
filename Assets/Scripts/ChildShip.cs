@@ -81,10 +81,12 @@ public class ChildShip : Mob
         }
     }
 
-    void Attack(Mob enemyStat)
+    void Attack(Mob mob)
     {
-        enemyStat.HP -= Damage;
-        enemyStat.anim.SetTrigger("Hit");
+        SplashCannon cannon = Instantiate<SplashCannon>(Resources.Load<SplashCannon>("Prefabs/SplashCannon"));
+        Debug.Log(Resources.Load<SplashCannon>("Prefabs/SplashCannon"));
+        cannon.attackDamage = Damage;
+        cannon.attackTarget = mob.gameObject;
         AudioManager.instance.SoundPlay("explodemini");
     }
 }

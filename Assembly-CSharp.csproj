@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\VolumeChange.cs" />
+    <Compile Include="Assets\Scripts\Cannon.cs" />
+    <Compile Include="Assets\Scripts\SplashCannon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
