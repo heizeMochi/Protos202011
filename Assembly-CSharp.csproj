@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Units\UnitFive.cs" />
     <Compile Include="Assets\Scripts\Units\UnitThree.cs" />
     <Compile Include="Assets\Scripts\Units\UnitFour.cs" />
+    <Compile Include="Assets\Scripts\SelectUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
