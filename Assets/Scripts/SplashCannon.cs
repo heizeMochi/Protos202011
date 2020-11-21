@@ -34,8 +34,12 @@ public class SplashCannon : MonoBehaviour
                 mob.HP -= attackDamage;
                 anim.SetTrigger("Explosion");
             }
-            Destroy(gameObject, 0.2f);
         }
+    }
+
+    private void Start()
+    {
+        Destroy(gameObject, 0.3f);
     }
 
     private void Update()
