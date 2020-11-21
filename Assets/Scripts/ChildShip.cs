@@ -84,5 +84,6 @@ public class ChildShip : Mob
     void Attack(Mob enemyStat)
     {
         enemyStat.HP -= Damage;
+        enemyStat.anim.SetTrigger("Hit");
     }
 }

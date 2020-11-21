@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6678042980133802523}
   - component: {fileID: 2108227178891076651}
   - component: {fileID: 706316114}
+  - component: {fileID: -5252831895347760241}
   m_Layer: 8
   m_Name: MotherShip
   m_TagString: RedTeam
@@ -189,3 +190,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!95 &-5252831895347760241
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175384555726189548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ec1944e6584f424185d8e921dc245b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

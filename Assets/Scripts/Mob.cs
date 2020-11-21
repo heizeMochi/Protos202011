@@ -8,6 +8,7 @@ public class Mob : MonoBehaviour
     public bool isAlive = false;
     public MobStat stat;
     public Mob AttackTarget;
+    public Animator anim;
 
 
     public int HP, MaxHP, Damage, Jewelry;
@@ -38,6 +39,7 @@ public class Mob : MonoBehaviour
         Jewelry = stat.Jewelry;
         attackSpeed = stat.attackSpeed;
         attackCool = stat.attackCool;
+        anim = transform.GetComponent<Animator>();
         AttackTarget = null;
     }
 }
