@@ -9,6 +9,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource backGround;
     public AudioSource sound;
 
+    public float effectSound;
+    public float backGroundSound;
+
     static Dictionary<string, AudioClip> backGroundList = new Dictionary<string, AudioClip>();
     static Dictionary<string, AudioClip> soundList = new Dictionary<string, AudioClip>();
 
@@ -28,6 +31,7 @@ public class AudioManager : MonoBehaviour
         {
             backGround.clip = backGroundList[name];
             backGround.Play();
+            backGround.loop = true;
         }
     }
 
@@ -44,10 +48,10 @@ public class AudioManager : MonoBehaviour
     public void SoundPlay(string name)
     {
         GameObject go = new GameObject("Sound");
-        AudioSource source = go.AddComponent<AudioSource>();
+        sound = go.AddComponent<AudioSource>();
 
-        source.clip = soundList[name];
-        source.Play();
+        sound.clip = soundList[name];
+        sound.Play();
 
         Destroy(go, soundList[name].length);
     }
@@ -58,6 +62,13 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         BackGroundLoad();
+        BackGroundPlay("Blackmoor_Tides_Loop");
         SoundLoad();
+    }
+
+    private void Update()
+    {
+        backGround.volume = backGroundSound;
+        sound.volume = effectSound;
     }
 }
