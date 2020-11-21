@@ -33,7 +33,36 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    void Update()
+    //void Update()
+    //{
+    //    if (!playing)
+    //        return;
+    //    time -= Time.deltaTime;
+    //    int i_time = Convert.ToInt32(time);
+    //    TimeText.text = i_time.ToString();
+
+    //    if (i_time == 0)
+    //        Defeat();
+
+    //    elapsedTime += Time.deltaTime;
+
+    //    if(elapsedTime >= jewelryTime && jewelry + getJewelry < maxJewlry)
+    //    {
+    //        elapsedTime = 0;
+
+    //        jewelry += getJewelry;
+    //    }else if(elapsedTime >= jewelryTime && jewelry + getJewelry >= maxJewlry)
+    //    {
+    //        elapsedTime = 0;
+
+    //        jewelry = maxJewlry;
+    //    }
+
+    //    jewelryText.text = $"{jewelry} / {maxJewlry}";
+
+    //}
+
+    private void Update()
     {
         if (!playing)
             return;
@@ -44,22 +73,13 @@ public class GameManager : MonoBehaviour
         if (i_time == 0)
             Defeat();
 
-        elapsedTime += Time.deltaTime;
-
-        if(elapsedTime >= jewelryTime && jewelry + getJewelry < maxJewlry)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            elapsedTime = 0;
-
-            jewelry += getJewelry;
-        }else if(elapsedTime >= jewelryTime && jewelry + getJewelry >= maxJewlry)
-        {
-            elapsedTime = 0;
-
-            jewelry = maxJewlry;
+            if (jewelry >= maxJewlry)
+                return;
+                jewelry += getJewelry;
         }
-
         jewelryText.text = $"{jewelry} / {maxJewlry}";
-
     }
 
     public static void Victory()
