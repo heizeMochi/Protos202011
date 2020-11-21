@@ -7,7 +7,11 @@ public class VolumeChange : MonoBehaviour
 {
     public Slider BGM;
     public Slider Sound;
-
+    private void Awake()
+    {
+        BGM.value = AudioManager.instance.backGroundSound;
+        Sound.value = AudioManager.instance.effectSound;
+    }
     private void Update()
     {
         AudioManager.instance.backGroundSound = BGM.value;
