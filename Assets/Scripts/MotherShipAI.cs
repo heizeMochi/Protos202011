@@ -28,15 +28,15 @@ public class MotherShipAI : MonoBehaviour
 
             int unitrand = Random.Range(0, 101);
 
-            if(unitrand > 50)
+            if(unitrand < 50)
                 ObjectPool.InstantiateMob<UnitOne>(mother, enemy);
-            else if(unitrand > 75)
+            else if(unitrand < 75)
                 ObjectPool.InstantiateMob<UnitTwo>(mother, enemy);
-            else if(unitrand > 90)
+            else if(unitrand < 90)
                 ObjectPool.InstantiateMob<UnitThree>(mother, enemy);
-            else if(unitrand > 97)
+            else if(unitrand < 97)
                 ObjectPool.InstantiateMob<UnitFour>(mother, enemy);
-            else if(unitrand > 100)
+            else if(unitrand < 100)
                     ObjectPool.InstantiateMob<UnitFive>(mother, enemy);
         }
     }
