@@ -9,8 +9,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource backGround;
     public AudioSource sound;
 
-    public float effectSound;
-    public float backGroundSound;
+    public float effectSound = 1f;
+    public float backGroundSound = 1f;
 
     static Dictionary<string, AudioClip> backGroundList = new Dictionary<string, AudioClip>();
     static Dictionary<string, AudioClip> soundList = new Dictionary<string, AudioClip>();
@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
     private void Start()
     {
