@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         {
             jewelryText = GameObject.Find("JewelryText").GetComponent<Text>();
             TimeText = GameObject.Find("TimeText").GetComponent<Text>();
-            GameObject go = GameObject.Find("Time");
+            GameObject go = GameObject.Find("GG");
             victory = go.transform.Find("Victory").GetComponent<GameObject>();
             defeat = go.transform.Find("Defeat").GetComponent<GameObject>();
         }

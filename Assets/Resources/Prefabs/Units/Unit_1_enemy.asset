@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 1
   mobType: 0
-  HP: 5
-  MaxHP: 5
+  HP: 1
+  MaxHP: 1
   Damage: 1
   enemy: 1
   Jewelry: 0

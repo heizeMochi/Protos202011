@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 209fdb9ff25a2e74fba5b2b798cbf7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnTime: 0
+  SpawnTime: 2
   jewelryText: {fileID: 1796098680}
   TimeText: {fileID: 677899222}
   victory: {fileID: 1302559166}
@@ -3526,7 +3526,7 @@ GameObject:
   - component: {fileID: 1250641587}
   - component: {fileID: 1250641586}
   m_Layer: 5
-  m_Name: Image
+  m_Name: GG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
