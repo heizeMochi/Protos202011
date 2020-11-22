@@ -12,7 +12,7 @@ public class Cannon : MonoBehaviour
 
     private void OnEnable()
     {
-        Destroy(gameObject, 0.4f);
+        Destroy(gameObject, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

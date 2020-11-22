@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDamage: 1
   attackTarget: {fileID: 0}
-  speed: 0.2
+  speed: 2
 --- !u!95 &1166471127626778580
 Animator:
   serializedVersion: 3
