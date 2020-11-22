@@ -5,24 +5,23 @@ using UnityEngine;
 public class Cannon : MonoBehaviour
 {
     public int attackDamage;
+    public Animator anim;
     public GameObject attackTarget { get; set; }
     
 
     private void OnEnable()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.4f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject == attackTarget)
         {
-            Debug.Log("CANNON");
             Mob mob = attackTarget.GetComponent<Mob>();
             mob.anim.SetTrigger("Hit");
             mob.HP -= attackDamage;
-            AudioManager.instance.SoundPlay("explodemini");
-            Destroy(gameObject);
+            anim.SetTrigger("Explosion");
         }
     }
 
