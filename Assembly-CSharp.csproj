@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Defficulty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

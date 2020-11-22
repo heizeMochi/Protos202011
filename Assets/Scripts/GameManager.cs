@@ -6,7 +6,21 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    static GameManager _instance;
+    public static GameManager Instance 
+    { 
+        get 
+        { 
+            if (!_instance)
+            {
+                _instance = FindObjectOfType(typeof(GameManager)) as GameManager;
+
+            }
+            return _instance;
+        }
+    }
+
+    public float SpawnTime = 2f;
 
     public Text jewelryText;
     public Text TimeText;
@@ -30,7 +44,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+        }else if(_instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
     //void Update()
@@ -64,6 +85,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (jewelryText == null)
+        {
+            jewelryText = GameObject.Find("JewelryText").GetComponent<Text>();
+            TimeText = GameObject.Find("TimeText").GetComponent<Text>();
+            GameObject go = GameObject.Find("Time");
+            victory = go.transform.Find("Victory").GetComponent<GameObject>();
+            defeat = go.transform.Find("Defeat").GetComponent<GameObject>();
+        }
         if (!playing)
             return;
         time -= Time.deltaTime;
@@ -72,6 +101,9 @@ public class GameManager : MonoBehaviour
 
         if (i_time == 0)
             Defeat();
+
+
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -92,15 +124,15 @@ public class GameManager : MonoBehaviour
     public static void Victory()
     {
         AudioManager.instance.SoundPlay("Victory");
-        instance.playing = false;
-        instance.victory.SetActive(true);
+        Instance.playing = false;
+        Instance.victory.SetActive(true);
     }
 
     public static void Defeat()
     {
         AudioManager.instance.SoundPlay("Defeat");
-        instance.playing = false;
-        instance.defeat.SetActive(true);
+        Instance.playing = false;
+        Instance.defeat.SetActive(true);
     }
 
     private void OnApplicationQuit()

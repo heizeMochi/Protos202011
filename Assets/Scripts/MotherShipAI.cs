@@ -8,7 +8,6 @@ public class MotherShipAI : MonoBehaviour
 
     bool enemy = true;
     float elapsedTime = 0;
-    float spawnTime = 2f;
 
     private void Start()
     {
@@ -17,10 +16,10 @@ public class MotherShipAI : MonoBehaviour
 
     void Update()
     {
-        if (mother.isAlive == false || !GameManager.instance.playing)
+        if (mother.isAlive == false || !GameManager.Instance.playing)
             return;
         elapsedTime += Time.deltaTime;
-        if (elapsedTime >= spawnTime)
+        if (elapsedTime >= GameManager.Instance.SpawnTime)
         {
             elapsedTime = 0;
             int rand = Random.Range(0, 3);

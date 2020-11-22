@@ -46,7 +46,9 @@ public class SplashCannon : MonoBehaviour
 
     private void Update()
     {
-        if(attackTarget!= null)
+        if (attackTarget != null)
+        {
             transform.position = Vector3.Slerp(transform.position, attackTarget.transform.position, speed);
+        }
     }
 }

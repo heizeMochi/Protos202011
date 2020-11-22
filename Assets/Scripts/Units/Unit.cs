@@ -9,7 +9,7 @@ public class Unit : Mob
 
     private void Update()
     {
-        if (!GameManager.instance.playing)
+        if (!GameManager.Instance.playing)
             return;
         AttackCoolDown();
         DieCheck();

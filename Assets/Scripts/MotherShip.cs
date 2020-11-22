@@ -9,7 +9,7 @@ public class MotherShip : Mob
 
     void Update()
     {
-        if (!isAlive || !GameManager.instance.playing)
+        if (!isAlive || !GameManager.Instance.playing)
             return;
         if (DieCheck())
         {

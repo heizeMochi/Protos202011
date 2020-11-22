@@ -12,7 +12,7 @@ public class Cannon : MonoBehaviour
 
     private void OnEnable()
     {
-        Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 0.5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,6 +30,6 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.Slerp(this.transform.position, attackTarget.transform.position, speed);
+        transform.position = Vector3.Slerp(this.transform.position, attackTarget.transform.position, 1);
     }
 }

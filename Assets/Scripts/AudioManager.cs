@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
     public void SoundPlay(string name)
     {
-        if (GameManager.instance.playing)
+        if (GameManager.Instance.playing)
         {
             GameObject go = new GameObject("Sound");
             sound = go.AddComponent<AudioSource>();
