@@ -296,7 +296,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5249578022345364247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d3db4498bc6f894c9bb935c2c56f564, type: 3}
+  m_Script: {fileID: 11500000, guid: de6c898f5d1c4ee4d82a5d989f93206d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
@@ -304,6 +304,7 @@ MonoBehaviour:
   stat: {fileID: 11400000, guid: 288e314906b7a4544a993fab27d8223e, type: 2}
   AttackTarget: {fileID: 0}
   anim: {fileID: 3267268107296502113}
+  mobType: 3
   HP: 0
   MaxHP: 0
   Damage: 0
@@ -382,7 +383,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: d36d4f292154a0447afafe2266e2bfc1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d50e695d1cc7dc4fac56edc0e85e3f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

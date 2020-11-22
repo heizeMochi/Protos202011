@@ -14,4 +14,12 @@ public class Define : MonoBehaviour
         Cannon,
         SplashCannon
     }
+    public enum MobType
+    {
+        One,
+        Two,
+        Three,
+        Four,
+        Five,
+    }
 }

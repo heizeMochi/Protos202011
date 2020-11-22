@@ -10,7 +10,7 @@ public class Mob : MonoBehaviour
     public Mob AttackTarget;
     public Animator anim;
     protected Define.AttackType attackType = Define.AttackType.Cannon;
-
+    public Define.MobType mobType;
 
     public int HP, MaxHP, Damage, Jewelry;
     public float attackSpeed;
@@ -31,7 +31,10 @@ public class Mob : MonoBehaviour
     {
         AudioManager.instance.SoundPlay("Scream");
     }
-
+    private void Awake()
+    {
+        mobType = stat.mobType;
+    }
     private void Start()
     {
         Init();

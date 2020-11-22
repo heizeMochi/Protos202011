@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2cc6501bd3593542a5edd437d514a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  root: {fileID: 3954574252046233105}
+  root: {fileID: -6653888724488316522}
 --- !u!1 &2950964682366956912
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,11 +163,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5249578022345364240}
   - component: {fileID: 5249578022345364241}
-  - component: {fileID: 3954574252046233105}
   - component: {fileID: 1592027425944597216}
   - component: {fileID: 1774561766239719346}
   - component: {fileID: 728993182007532133}
   - component: {fileID: 165852139283745336}
+  - component: {fileID: -6653888724488316522}
   m_Layer: 0
   m_Name: Unit_2_enemy
   m_TagString: BlueTeam
@@ -242,30 +242,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3954574252046233105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5249578022345364247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcbd3affab346f445a11943a8d2587b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  isAlive: 0
-  stat: {fileID: 11400000, guid: ca8472e60061de643a969e6b4ea21f85, type: 2}
-  AttackTarget: {fileID: 0}
-  anim: {fileID: 165852139283745336}
-  HP: 0
-  MaxHP: 0
-  Damage: 0
-  Jewelry: 0
-  attackSpeed: 0
-  attackCool: 0
-  attackCollider: {fileID: 2018655369}
 --- !u!114 &1592027425944597216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,3 +369,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-6653888724488316522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249578022345364247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de6c898f5d1c4ee4d82a5d989f93206d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  isAlive: 0
+  stat: {fileID: 11400000, guid: ca8472e60061de643a969e6b4ea21f85, type: 2}
+  AttackTarget: {fileID: 0}
+  anim: {fileID: 165852139283745336}
+  mobType: 1
+  HP: 0
+  MaxHP: 0
+  Damage: 0
+  Jewelry: 0
+  attackSpeed: 0
+  attackCool: 0
+  attackCollider: {fileID: 2018655369}

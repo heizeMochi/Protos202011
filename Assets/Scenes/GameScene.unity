@@ -4910,7 +4910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobs:
   - {fileID: 7483826014242435750, guid: 1b052e72717dfca4cb25f9be9d4d4208, type: 3}
-  - {fileID: 2880102708185433375, guid: a7296f2a2ca31094c9b7903eed2f62fa, type: 3}
+  - {fileID: 4802785856380381248, guid: a7296f2a2ca31094c9b7903eed2f62fa, type: 3}
   - {fileID: -5060471170088393513, guid: f298f27f13fb7644bb308cde3dc0a6c5, type: 3}
   - {fileID: -1403313617107607825, guid: 289cb5a1a8b2a0c4ebb1b606d8b7ee55, type: 3}
   - {fileID: 7438647985935566274, guid: ba5a981d1efa53b48bd78d9bacefaa4a, type: 3}

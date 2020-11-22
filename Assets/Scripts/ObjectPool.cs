@@ -52,21 +52,23 @@ public class ObjectPool : MonoBehaviour
 
     void PrefabInit(GameObject go, int count)
     {
+        Mob mob = go.GetComponent<Mob>();
         for (int i = 0; i < count; i++)
         {
             mobs.Add(Instantiate(go));
+            mob.mobType = mob.stat.mobType;
         }
     }
 
-    public static void InstantiateMob<T>(Mob mother, bool Enemy) where T : Mob
+    public static void InstantiateMob<T>(Mob mother, bool Enemy, Define.MobType Type) where T : Mob
     {
         for (int i = 0; i < instance.mobs.Count; i++)
         {
-            
+
             Mob SpawnMob;
             if ((SpawnMob = instance.mobs[i].GetComponent<T>()) == null)
                 continue;
-        if (SpawnMob.stat.enemy == mother.stat.enemy)
+            if (SpawnMob.stat.enemy == mother.stat.enemy && SpawnMob.mobType == Type)
             {
                 if (GameManager.jewelry < SpawnMob.stat.Jewelry)
                     return;

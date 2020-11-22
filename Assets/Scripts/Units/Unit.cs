@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitFour : Mob
+public class Unit : Mob
 {
     bool canAttack = false;
     public Collider2D attackCollider;
@@ -38,9 +38,9 @@ public class UnitFour : Mob
                 (transform.position.x + (stat.moveSpeed * Time.deltaTime),
                 transform.position.y);
         }
-        else if (stat.enemy)
+        else if(stat.enemy)
         {
-            transform.position
+            transform.position 
                 = new Vector2
                 (transform.position.x + -(stat.moveSpeed * Time.deltaTime),
                 transform.position.y);
@@ -69,7 +69,7 @@ public class UnitFour : Mob
             return;
         }
         attackCollider.enabled = false;
-        if (AttackTarget.gameObject.activeSelf == false)
+        if(AttackTarget.gameObject.activeSelf == false)
         {
             AttackTarget = null;
             state = Define.State.MOVING;
