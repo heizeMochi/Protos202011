@@ -32,10 +32,13 @@ public class Defficulty : MonoBehaviour
             switch (sel)
             {
                 case 0: // EASY
+                    AudioManager.instance.deffi = Define.Defficulty.Easy;
                     break;
                 case 1: // NORMAL
+                    AudioManager.instance.deffi = Define.Defficulty.Normal;
                     break;
                 case 2: // HARD
+                    AudioManager.instance.deffi = Define.Defficulty.Hard;
                     break;
             }
             SceneManager.LoadSceneAsync("GameScene");

@@ -7,8 +7,6 @@ public class Cannon : MonoBehaviour
     public int attackDamage;
     public GameObject attackTarget { get; set; }
     
-    [SerializeField]
-    float speed;
 
     private void OnEnable()
     {

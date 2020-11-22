@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public Define.Defficulty deffi = Define.Defficulty.Easy;
     public static AudioManager instance;
 
     public AudioSource backGround;
@@ -47,8 +48,8 @@ public class AudioManager : MonoBehaviour
 
     public void SoundPlay(string name)
     {
-        if (GameManager.Instance.playing)
-        {
+        if (!GameManager.Instance.playing || GameManager.Instance == null)
+            return;
             GameObject go = new GameObject("Sound");
             sound = go.AddComponent<AudioSource>();
             sound.volume = effectSound;
@@ -57,7 +58,6 @@ public class AudioManager : MonoBehaviour
             sound.Play();
 
             Destroy(go, soundList[name].length);
-        }
     }
 
     private void Awake()

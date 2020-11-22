@@ -22,4 +22,11 @@ public class Define : MonoBehaviour
         Four,
         Five,
     }
+
+    public enum Defficulty
+    {
+        Easy,
+        Normal,
+        Hard,
+    }
 }

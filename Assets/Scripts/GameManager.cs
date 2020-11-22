@@ -6,28 +6,16 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    static GameManager _instance;
-    public static GameManager Instance 
-    { 
-        get 
-        { 
-            if (!_instance)
-            {
-                _instance = FindObjectOfType(typeof(GameManager)) as GameManager;
+    public static GameManager Instance;
 
-            }
-            return _instance;
-        }
-    }
-
-    public float SpawnTime = 2f;
+    public float SpawnTime;
 
     public Text jewelryText;
     public Text TimeText;
 
     public GameObject victory, defeat;
 
-    public bool playing = true;
+    public bool playing = false;
 
     [Tooltip("제한시간설정 : 해당 시간이 0이되면 게임패배")]
     public float time = 120;
@@ -44,14 +32,27 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        playing = true;
+        switch (AudioManager.instance.deffi)
         {
-            _instance = this;
-        }else if(_instance != this)
-        {
-            Destroy(gameObject);
+            case Define.Defficulty.Easy:
+                SpawnTime = 3f;
+                getJewelry = 10;
+                break;
+            case Define.Defficulty.Normal:
+                SpawnTime = 2f;
+                getJewelry = 5;
+                break;
+            case Define.Defficulty.Hard:
+                SpawnTime = 1f;
+                getJewelry = 3;
+                break;
         }
-        DontDestroyOnLoad(gameObject);
     }
 
     //void Update()
@@ -85,14 +86,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (jewelryText == null)
-        {
-            jewelryText = GameObject.Find("JewelryText").GetComponent<Text>();
-            TimeText = GameObject.Find("TimeText").GetComponent<Text>();
-            GameObject go = GameObject.Find("GG");
-            victory = go.transform.Find("Victory").GetComponent<GameObject>();
-            defeat = go.transform.Find("Defeat").GetComponent<GameObject>();
-        }
         if (!playing)
             return;
         time -= Time.deltaTime;
@@ -101,9 +94,6 @@ public class GameManager : MonoBehaviour
 
         if (i_time == 0)
             Defeat();
-
-
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
