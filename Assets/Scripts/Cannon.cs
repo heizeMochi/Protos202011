@@ -10,6 +10,11 @@ public class Cannon : MonoBehaviour
     [SerializeField]
     float speed;
 
+    private void OnEnable()
+    {
+        Destroy(gameObject, 0.2f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject == attackTarget)
