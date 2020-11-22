@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BAD09EE6-6C6D-323B-033C-D9BB4C17523E}</ProjectGuid>
+    <ProjectGuid>{77BB0C59-6EDF-441D-78FC-8511ED0AC6CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AttackCollider.cs" />
     <Compile Include="Assets\Scripts\HPSlider.cs" />
+    <Compile Include="Assets\Scripts\Defficulty.cs" />
     <Compile Include="Assets\Scripts\SplashCannon.cs" />
     <Compile Include="Assets\Scripts\MobStat.cs" />
     <Compile Include="Assets\Scripts\Mob.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="Assets\Scripts\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Defficulty.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
