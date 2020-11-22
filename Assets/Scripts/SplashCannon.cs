@@ -23,6 +23,8 @@ public class SplashCannon : MonoBehaviour
             {
                 if(col[i].gameObject.tag == attackTarget.tag)
                 {
+                    if (col[i].gameObject.layer == 8)
+                        continue;
                     target.Add(col[i].gameObject);
                 }
             }
@@ -44,6 +46,7 @@ public class SplashCannon : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.Slerp(transform.position, attackTarget.transform.position, speed);
+        if(attackTarget!= null)
+            transform.position = Vector3.Slerp(transform.position, attackTarget.transform.position, speed);
     }
 }

@@ -76,14 +76,33 @@ public class UnitTwo : Mob
         }
         if (canAttack)
         {
-            Attack(AttackTarget);
+            switch (attackType)
+            {
+                case Define.AttackType.Cannon:
+                    NormalAttack(AttackTarget);
+                    break;
+                case Define.AttackType.SplashCannon:
+                    SplashAttack(AttackTarget);
+                    break;
+                default:
+                    break;
+            }
             canAttack = false;
         }
     }
 
-    void Attack(Mob mob)
+    void SplashAttack(Mob mob)
     {
         SplashCannon cannon = Instantiate<SplashCannon>(Resources.Load<SplashCannon>("Prefabs/SplashCannon"), transform);
+        cannon.transform.localPosition = Vector3.zero;
+        cannon.transform.parent = null;
+        cannon.attackDamage = Damage;
+        cannon.attackTarget = mob.gameObject;
+        AudioManager.instance.SoundPlay("explodemini");
+    }
+    void NormalAttack(Mob mob)
+    {
+        Cannon cannon = Instantiate<Cannon>(Resources.Load<Cannon>("Prefabs/Cannon"), transform);
         cannon.transform.localPosition = Vector3.zero;
         cannon.transform.parent = null;
         cannon.attackDamage = Damage;

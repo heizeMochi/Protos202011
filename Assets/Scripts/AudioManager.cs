@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    void SoundLoad(string Path = "Sound/Sound/")
+    void SoundLoad(string Path = "Sound/Sfx/")
     {
         AudioClip[] audio = Resources.LoadAll<AudioClip>(Path);
 
@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour
     {
         GameObject go = new GameObject("Sound");
         sound = go.AddComponent<AudioSource>();
+        sound.volume = effectSound;
 
         sound.clip = soundList[name];
         sound.Play();
@@ -70,6 +71,5 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         backGround.volume = backGroundSound;
-        sound.volume = effectSound;
     }
 }

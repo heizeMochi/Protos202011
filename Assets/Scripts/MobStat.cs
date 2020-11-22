@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MobStat : ScriptableObject
 {
+    public Define.AttackType attackType = Define.AttackType.Cannon;
+
     public int HP;
     public int MaxHP;
     public int Damage;

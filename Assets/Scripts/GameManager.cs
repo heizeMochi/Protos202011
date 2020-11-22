@@ -75,21 +75,28 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (jewelry >= maxJewlry)
+            if (jewelry + getJewelry >= maxJewlry)
+            {
+                jewelry = maxJewlry;
+                AudioManager.instance.SoundPlay("Failed");
                 return;
+            }
                 jewelry += getJewelry;
+            AudioManager.instance.SoundPlay("Coin");
         }
         jewelryText.text = $"{jewelry} / {maxJewlry}";
     }
 
     public static void Victory()
     {
+        AudioManager.instance.SoundPlay("Victory");
         instance.playing = false;
         instance.victory.SetActive(true);
     }
 
     public static void Defeat()
     {
+        AudioManager.instance.SoundPlay("Defeat");
         instance.playing = false;
         instance.defeat.SetActive(true);
     }

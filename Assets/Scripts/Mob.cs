@@ -9,6 +9,7 @@ public class Mob : MonoBehaviour
     public MobStat stat;
     public Mob AttackTarget;
     public Animator anim;
+    protected Define.AttackType attackType = Define.AttackType.Cannon;
 
 
     public int HP, MaxHP, Damage, Jewelry;
@@ -26,6 +27,11 @@ public class Mob : MonoBehaviour
         return false;
     }
 
+    private void OnDisable()
+    {
+        AudioManager.instance.SoundPlay("Scream");
+    }
+
     private void Start()
     {
         Init();
@@ -40,6 +46,7 @@ public class Mob : MonoBehaviour
         attackSpeed = stat.attackSpeed;
         attackCool = stat.attackCool;
         anim = transform.GetComponent<Animator>();
+        attackType = stat.attackType;
         AttackTarget = null;
     }
 }

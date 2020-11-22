@@ -9,4 +9,9 @@ public class Define : MonoBehaviour
         MOVING,
         ATTACK,
     }
+    public enum AttackType
+    {
+        Cannon,
+        SplashCannon
+    }
 }
