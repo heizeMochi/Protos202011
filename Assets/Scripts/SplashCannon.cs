@@ -41,7 +41,7 @@ public class SplashCannon : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 0.3f);
+        Destroy(gameObject, 1f);
     }
 
     private void Update()
