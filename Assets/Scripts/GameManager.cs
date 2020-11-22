@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
                 return;
             }
                 jewelry += getJewelry;
-            if (jewelry >= maxJewlry)
+            if (jewelry > maxJewlry)
                 jewelry = maxJewlry;
             AudioManager.instance.SoundPlay("Coin");
         }
