@@ -47,15 +47,19 @@ public class AudioManager : MonoBehaviour
 
     public void SoundPlay(string name)
     {
-        GameObject go = new GameObject("Sound");
-        sound = go.AddComponent<AudioSource>();
-        sound.volume = effectSound;
+        if (GameManager.instance.playing)
+        {
+            GameObject go = new GameObject("Sound");
+            sound = go.AddComponent<AudioSource>();
+            sound.volume = effectSound;
 
-        sound.clip = soundList[name];
-        sound.Play();
+            sound.clip = soundList[name];
+            sound.Play();
 
-        Destroy(go, soundList[name].length);
+            Destroy(go, soundList[name].length);
+        }
     }
+
     private void Awake()
     {
         instance = this;
