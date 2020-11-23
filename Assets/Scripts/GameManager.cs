@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -87,7 +88,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (!playing)
-            return;
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+                SceneManager.LoadSceneAsync("Title");
+        }
         time -= Time.deltaTime;
         int i_time = Convert.ToInt32(time);
         TimeText.text = i_time.ToString();

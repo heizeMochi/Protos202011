@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Defficulty : MonoBehaviour
 {
+    public SceneChange ch;
     public Transform selectImg;
     public List<Transform> select = new List<Transform>();
     public int sel = 0;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -42,6 +38,11 @@ public class Defficulty : MonoBehaviour
                     break;
             }
             SceneManager.LoadSceneAsync("GameScene");
+        }else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ch.PressEnter.color = new Color(1, 1, 1, 1);
+            ch.ui = false;
+            gameObject.SetActive(false);
         }
     }
 }
