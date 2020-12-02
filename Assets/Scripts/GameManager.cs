@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    bool left = false, right = false;
+
     public float SpawnTime;
 
     public Text jewelryText;
@@ -42,55 +44,34 @@ public class GameManager : MonoBehaviour
         switch (AudioManager.instance.deffi)
         {
             case Define.Defficulty.Easy:
-                SpawnTime = 3f;
-                getJewelry = 10;
+                time = 60;
+                SpawnTime = 2f;
+                getJewelry = 2;
                 break;
             case Define.Defficulty.Normal:
-                SpawnTime = 2f;
-                getJewelry = 5;
+                time = 80;
+                SpawnTime = 1f;
+                getJewelry = 2;
                 break;
             case Define.Defficulty.Hard:
-                SpawnTime = 1f;
-                getJewelry = 3;
+                time = 120;
+                SpawnTime = 1.5f;
+                getJewelry = 1;
                 break;
         }
     }
-
-    //void Update()
-    //{
-    //    if (!playing)
-    //        return;
-    //    time -= Time.deltaTime;
-    //    int i_time = Convert.ToInt32(time);
-    //    TimeText.text = i_time.ToString();
-
-    //    if (i_time == 0)
-    //        Defeat();
-
-    //    elapsedTime += Time.deltaTime;
-
-    //    if(elapsedTime >= jewelryTime && jewelry + getJewelry < maxJewlry)
-    //    {
-    //        elapsedTime = 0;
-
-    //        jewelry += getJewelry;
-    //    }else if(elapsedTime >= jewelryTime && jewelry + getJewelry >= maxJewlry)
-    //    {
-    //        elapsedTime = 0;
-
-    //        jewelry = maxJewlry;
-    //    }
-
-    //    jewelryText.text = $"{jewelry} / {maxJewlry}";
-
-    //}
 
     private void Update()
     {
         if (!playing)
         {
             if (Input.GetKeyDown(KeyCode.Return))
+            {
                 SceneManager.LoadSceneAsync("Title");
+                AudioManager.instance.backGround.UnPause();
+                AudioManager.instance.effectSound = 0.03f;
+            }
+            return;
         }
         time -= Time.deltaTime;
         int i_time = Convert.ToInt32(time);
@@ -99,15 +80,22 @@ public class GameManager : MonoBehaviour
         if (i_time == 0)
             Defeat();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            left = true;
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+            right = true;
+
+        if (left && right)
         {
+            left = false;
+            right = false;
             if (jewelry >= maxJewlry)
             {
                 jewelry = maxJewlry;
                 AudioManager.instance.SoundPlay("Failed");
                 return;
             }
-                jewelry += getJewelry;
+            jewelry += getJewelry;
             if (jewelry > maxJewlry)
                 jewelry = maxJewlry;
             AudioManager.instance.SoundPlay("Coin");
@@ -117,6 +105,7 @@ public class GameManager : MonoBehaviour
 
     public static void Victory()
     {
+        AudioManager.instance.backGround.Pause();
         AudioManager.instance.SoundPlay("Victory");
         Instance.playing = false;
         Instance.victory.SetActive(true);
@@ -124,6 +113,8 @@ public class GameManager : MonoBehaviour
 
     public static void Defeat()
     {
+        AudioManager.instance.backGround.Pause();
+        AudioManager.instance.effectSound = 0.15f;
         AudioManager.instance.SoundPlay("Defeat");
         Instance.playing = false;
         Instance.defeat.SetActive(true);

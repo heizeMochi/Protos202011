@@ -28,6 +28,6 @@ public class Cannon : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector3.Slerp(this.transform.position, attackTarget.transform.position, 1f * speed * Time.deltaTime);
+        transform.position = Vector3.Lerp(this.transform.position, attackTarget.transform.position, 1f * speed * Time.deltaTime);
     }
 }

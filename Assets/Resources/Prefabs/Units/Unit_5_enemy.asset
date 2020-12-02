@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 1
   mobType: 4
-  HP: 25
-  MaxHP: 25
+  HP: 5
+  MaxHP: 5
   Damage: 1
   enemy: 1
   Jewelry: 0
-  moveSpeed: 1
-  attackSpeed: 1
+  moveSpeed: 0.5
+  attackSpeed: 5
   attackCool: 1

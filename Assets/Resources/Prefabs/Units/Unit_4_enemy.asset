@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6edb4ba656bd96641b1eb19c82568d9e, type: 3}
   m_Name: Unit_4_enemy
   m_EditorClassIdentifier: 
-  attackType: 1
+  attackType: 0
   mobType: 3
-  HP: 20
-  MaxHP: 20
+  HP: 5
+  MaxHP: 5
   Damage: 1
   enemy: 1
   Jewelry: 0
   moveSpeed: 1
-  attackSpeed: 1
+  attackSpeed: 0.5
   attackCool: 1

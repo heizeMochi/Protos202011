@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 1
   mobType: 2
-  HP: 15
-  MaxHP: 15
-  Damage: 1
+  HP: 20
+  MaxHP: 20
+  Damage: 2
   enemy: 0
   Jewelry: 15
-  moveSpeed: 1
+  moveSpeed: 0.75
   attackSpeed: 1
   attackCool: 1

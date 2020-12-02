@@ -6,39 +6,56 @@ using UnityEngine.UI;
 
 public class SceneChange : MonoBehaviour
 {
-    public Text PressEnter;
     public GameObject go;
+    public GameObject how;
+
+    public Transform select;
+
+    public GameObject[] selectmenu;
+
+    [SerializeField]
+    Transform[] Pos;
+
+    int row = 0;
 
     public bool ui = false;
 
-    bool Light = false;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && ui == false)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && row != 2 && !ui)
         {
-            PressEnter.color = new Color(1, 1, 1, 0);
-            go.SetActive(true);
-            ui = true;
+            row += 1;
         }
-        TextLight();
-    }
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && row != 0 && !ui)
+        {
+            row -= 1;
+        }
 
-    void TextLight()
-    {
-        if (ui == false)
+        select.position = Pos[row].position;
+
+        if (Input.GetKeyDown(KeyCode.Return) && !ui)
         {
-            if (PressEnter.color.a <= 0.3f)
-                Light = true;
-            else if (PressEnter.color.a >= 1f)
-                Light = false;
-            if (Light)
+            if (row == 0)
             {
-                PressEnter.color = new Color(1, 1, 1, PressEnter.color.a + 0.5f * Time.deltaTime);
-            }
-            else
+                foreach (var item in selectmenu)
+                {
+                    item.SetActive(false);
+                }
+                go.SetActive(true);
+                ui = true;
+            }else if(row == 1)
             {
-                PressEnter.color = new Color(1, 1, 1, PressEnter.color.a - 0.5f * Time.deltaTime);
+                foreach (var item in selectmenu)
+                {
+                    item.SetActive(false);
+                }
+                how.SetActive(true);
+                ui = true;
+            }else if(row == 2)
+            {
+                Application.Quit();
             }
         }
+
     }
 }

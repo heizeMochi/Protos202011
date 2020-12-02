@@ -40,9 +40,12 @@ public class Defficulty : MonoBehaviour
             SceneManager.LoadSceneAsync("GameScene");
         }else if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ch.PressEnter.color = new Color(1, 1, 1, 1);
             ch.ui = false;
             gameObject.SetActive(false);
+            foreach (var item in ch.selectmenu)
+            {
+                item.SetActive(true);
+            }
         }
     }
 }
